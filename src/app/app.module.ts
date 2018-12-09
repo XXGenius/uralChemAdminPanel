@@ -15,7 +15,7 @@ import {
   MatCardModule,
   MatDialogModule,
   MatInputModule,
-  MatProgressSpinnerModule,
+  MatProgressSpinnerModule, MatSelectModule,
   MatToolbarModule
 } from '@angular/material';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
@@ -25,6 +25,11 @@ import { IndexComponent } from './index/index.component';
 import { HeaderComponent } from './main/header/header.component';
 import { FooterComponent } from './main/footer/footer.component';
 import {UserFormComponent} from './forms/user-form/user-form.component';
+import { ProfileComponent } from './dictionaries/profile/profile.component';
+import { BranchComponent } from './dictionaries/branch/branch.component';
+import { CategoryComponent } from './dictionaries/category/category.component';
+import { CropComponent } from './dictionaries/crop/crop.component';
+import { ProductComponent } from './dictionaries/product/product.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,12 @@ import {UserFormComponent} from './forms/user-form/user-form.component';
     IndexComponent,
     HeaderComponent,
     FooterComponent,
-    UserFormComponent
+    UserFormComponent,
+    ProfileComponent,
+    BranchComponent,
+    CategoryComponent,
+    CropComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +63,8 @@ import {UserFormComponent} from './forms/user-form/user-form.component';
     MatProgressSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],

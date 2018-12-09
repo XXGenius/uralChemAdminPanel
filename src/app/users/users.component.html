@@ -16,13 +16,13 @@
     </tr>
     </thead>
     <tbody >
-    <tr *ngFor="let user of users">
+    <tr *ngFor="let user of users; let i = index;" [@list]>
       <td>{{user.id}}</td>
       <td>{{user.firstName}} {{user.lastName}}</td>
       <td>{{user.email}}</td>
       <td style="width: 20%;">
         <a class="waves-effect waves-light btn blue"><i class="Tiny material-icons">create</i></a>
-        <a class="waves-effect waves-light btn red"><i class="Tiny material-icons">close</i></a>
+        <a class="waves-effect waves-light btn red" (click)="remove(i)"><i class="Tiny material-icons" >close</i></a>
       </td>
     </tr>
     </tbody>

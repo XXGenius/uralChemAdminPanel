@@ -1,3 +1,24 @@
-<p>
-  dictionaries works!
-</p>
+<app-header></app-header>
+<div *ngIf="!showSpinner">
+  <app-profile></app-profile>
+  <app-branch></app-branch>
+  <app-crop></app-crop>
+  <app-product></app-product>
+  <app-category></app-category>
+</div>
+<div *ngIf="showSpinner" class="center-align space">
+  <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

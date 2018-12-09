@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ContainerService} from '../services/container.service';
+import {ApiService} from '../services/api.service';
 
 @Component({
   selector: 'app-dictionaries',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dictionaries.component.scss']
 })
 export class DictionariesComponent implements OnInit {
+  showSpinner;
 
-  constructor() { }
+  constructor(private container: ContainerService, private apiService: ApiService) {
+    this.showSpinner = true;
+    this.apiService.getProfiles().subscribe((res) => {
+      this.container.profiles = res;
+      this.showSpinner = false;
+    });
+  }
 
   ngOnInit() {
   }
-
 }
