@@ -3,23 +3,31 @@
     <div>
       <div class="row">
         <div class="center-align">
-          <div style="background: #013a81;margin: 0 0 1vw;border-top-left-radius: 10px;border-top-right-radius: 10px;" class="input-field col s12 title-login">
+          <div style="background: #013a81;margin: 0 0 1vw;border-top-left-radius: 10px;border-top-right-radius: 10px;"
+               class="input-field col s12 title-login">
             Авторизация
           </div>
         </div>
         <form class="col s12">
           <div class="row">
             <div class="input-field col s12">
-              <input id="email" type="email" class="validate" autocomplete="off" [formControl]="email">
+              <input id="email" type="email" class="validate" autocomplete="off" pattern="{{emailPattern}}" [formControl]="email" required (focus)="focusInput()">
               <label for="email">Электронная почта</label>
             </div>
             <div class="input-field col s12">
-              <input id="password" type="password" class="validate" autocomplete="off" [formControl]="password">
+              <input id="password" type="password" class="validate" autocomplete="off" [formControl]="password" required (focus)="focusInput()">
               <label for="password">Пароль</label>
+            </div>
+            <div class="input-field col s12" *ngIf="error">
+              <div class="center-align">
+                <div style="color: red; font-size: 12px">
+                  {{error}}
+                </div>
+              </div>
             </div>
             <div class="center-align">
               <div class="input-field col s12">
-                <a class="waves-effect waves-light btn" *ngIf="!showSpinner" (click)="login()">Войти</a>
+                <button class="waves-effect waves-light btn" *ngIf="!showSpinner" (click)="login()" [disabled]="email.invalid || password.invalid">Войти</button>
               </div>
               <div class="preloader-wrapper big active" *ngIf="showSpinner">
                 <div class="spinner-layer spinner-blue-only">
@@ -35,7 +43,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         </form>
       </div>

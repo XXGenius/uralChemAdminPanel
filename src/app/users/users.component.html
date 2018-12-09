@@ -1,3 +1,46 @@
-<p>
-  users works!
-</p>
+<app-header></app-header>
+<div style="    margin-bottom: 5%;" class="container" *ngIf="!showSpinner && users">
+  <div class="space">
+    <div class="create-button z-depth-5" (click)="openAddUserDialog()">
+     <i class="material-icons green-text" >add</i>
+      <div>Добавить пользователя</div>
+    </div>
+  </div>
+  <table class="striped centered space z-depth-5">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Имя\Фамилия</th>
+      <th>Электронная почта</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody >
+    <tr *ngFor="let user of users">
+      <td>{{user.id}}</td>
+      <td>{{user.firstName}} {{user.lastName}}</td>
+      <td>{{user.email}}</td>
+      <td style="width: 20%;">
+        <a class="waves-effect waves-light btn blue"><i class="Tiny material-icons">create</i></a>
+        <a class="waves-effect waves-light btn red"><i class="Tiny material-icons">close</i></a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="showSpinner" class="center-align space">
+  <div class="preloader-wrapper big active" >
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
