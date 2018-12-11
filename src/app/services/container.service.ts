@@ -5,9 +5,11 @@ import {Subject} from 'rxjs';
   providedIn: 'root'
 })
 export class ContainerService {
-  public profiless: Subject<Array> = new Subject<Array>();
-
+  public profiless: Subject<any> = new Subject<any>();
+  public methodss: Subject<any> = new Subject<any>();
+  public methods;
   public profiles;
+
 
   constructor() {
   }

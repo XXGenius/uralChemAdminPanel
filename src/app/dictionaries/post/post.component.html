@@ -1,0 +1,58 @@
+<div style="    margin-bottom: 5%;" class="container" *ngIf="!showSpinner && posts">
+  <div class="space title">
+    Должности
+  </div>
+  <table class="striped centered space z-depth-5">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Имя</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td></td>
+      <td [formGroup]="form"><input type="text" formControlName="name" placeholder="Название должности"></td>
+      <td style="width: 20%;">
+        <a class="waves-effect btn blue" (click)="create(form)"><i class="Tiny material-icons">add</i></a>
+      </td>
+    </tr>
+    <tr *ngFor="let post of posts; let i = index;">
+      <td>{{i+1}}</td>
+      <td>
+        <span *ngIf="!post.edit">{{post.name}}</span>
+        <div *ngIf="post.edit" [formGroup]="formUpdate">
+          <input type="text" formControlName="name" value="{{post.name}}" required>
+        </div>
+      </td>
+      <td style="width: 20%;">
+        <div *ngIf="!post.edit">
+          <a class="btn blue"><i class="Tiny material-icons" (click)="showUpdate(i)">create</i></a>
+          <a class="btn red" (click)="remove(i)"><i class="Tiny material-icons">delete</i></a>
+        </div>
+        <div *ngIf="post.edit">
+          <button class="btn blue" (click)="update(formUpdate, i)" [disabled]="formUpdate.invalid"><i
+            class="Tiny material-icons">save</i></button>
+          <a class="btn red" (click)="showUpdate(i)"><i class="Tiny material-icons">close</i></a>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="showSpinner" class="center-align space">
+  <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>

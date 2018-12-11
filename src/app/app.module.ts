@@ -30,6 +30,12 @@ import { BranchComponent } from './dictionaries/branch/branch.component';
 import { CategoryComponent } from './dictionaries/category/category.component';
 import { CropComponent } from './dictionaries/crop/crop.component';
 import { ProductComponent } from './dictionaries/product/product.component';
+import { CompanyComponent } from './dictionaries/company/company.component';
+import { PostComponent } from './dictionaries/post/post.component';
+import { GoalComponent } from './dictionaries/goal/goal.component';
+import { PurchaseMethodComponent } from './dictionaries/purchase-method/purchase-method.component';
+import { SupplierComponent } from './dictionaries/supplier/supplier.component';
+import { ServiceComponent } from './dictionaries/service/service.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +53,13 @@ import { ProductComponent } from './dictionaries/product/product.component';
     BranchComponent,
     CategoryComponent,
     CropComponent,
-    ProductComponent
+    ProductComponent,
+    CompanyComponent,
+    PostComponent,
+    GoalComponent,
+    PurchaseMethodComponent,
+    SupplierComponent,
+    ServiceComponent
   ],
   imports: [
     BrowserModule,

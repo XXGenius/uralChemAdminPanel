@@ -161,4 +161,138 @@ export class ApiService {
   deleteCategory(id) {
     return this.http.post(this.config.apiUrl + 'category/delete/' + id, null, {headers: this.headers});
   }
+
+  // companies
+
+  getCompanies() {
+    return this.http.get(this.config.apiUrl + 'company/get-all', {headers: this.headers});
+  }
+
+  createCompany(name) {
+    return this.http.post(this.config.apiUrl + 'company/create', {
+      name: name,
+    }, {headers: this.headers});
+  }
+
+  updateCompany(name,  id) {
+    return this.http.post(this.config.apiUrl + 'company/update/' + id, {
+      name: name,
+    }, {headers: this.headers});
+  }
+
+  deleteCompany(id) {
+    return this.http.post(this.config.apiUrl + 'company/delete/' + id, null, {headers: this.headers});
+  }
+
+  // goals
+
+  getGoals() {
+    return this.http.get(this.config.apiUrl + 'goal/get-all', {headers: this.headers});
+  }
+
+  createGoal(name) {
+    return this.http.post(this.config.apiUrl + 'goal/create', {
+      name: name,
+    }, {headers: this.headers});
+  }
+
+  updateGoal(name,  id) {
+    return this.http.post(this.config.apiUrl + 'goal/update/' + id, {
+      name: name,
+    }, {headers: this.headers});
+  }
+
+  deleteGoal(id) {
+    return this.http.post(this.config.apiUrl + 'goal/delete/' + id, null, {headers: this.headers});
+  }
+
+  // posts
+
+  getPosts() {
+    return this.http.get(this.config.apiUrl + 'post/get-all', {headers: this.headers});
+  }
+
+  createPost(name) {
+    return this.http.post(this.config.apiUrl + 'post/create', {
+      name: name,
+    }, {headers: this.headers});
+  }
+
+  updatePost(name,  id) {
+    return this.http.post(this.config.apiUrl + 'post/update/' + id, {
+      name: name,
+    }, {headers: this.headers});
+  }
+
+  deletePost(id) {
+    return this.http.post(this.config.apiUrl + 'post/delete/' + id, null, {headers: this.headers});
+  }
+
+  // services
+
+  getServices() {
+    return this.http.get(this.config.apiUrl + 'service/get-all', {headers: this.headers});
+  }
+
+  createService(name) {
+    return this.http.post(this.config.apiUrl + 'service/create', {
+      name: name,
+    }, {headers: this.headers});
+  }
+
+  updateService(name,  id) {
+    return this.http.post(this.config.apiUrl + 'service/update/' + id, {
+      name: name,
+    }, {headers: this.headers});
+  }
+
+  deleteService(id) {
+    return this.http.post(this.config.apiUrl + 'service/delete/' + id, null, {headers: this.headers});
+  }
+
+  // purchase methods
+
+  getMethods() {
+    return this.http.get(this.config.apiUrl + 'purchase/get-all', {headers: this.headers});
+  }
+
+  createMethod(name) {
+    return this.http.post(this.config.apiUrl + 'purchase/create', {
+      name: name,
+    }, {headers: this.headers});
+  }
+
+  updateMethod(name,  id) {
+    return this.http.post(this.config.apiUrl + 'purchase/update/' + id, {
+      name: name,
+    }, {headers: this.headers});
+  }
+
+  deleteMethod(id) {
+    return this.http.post(this.config.apiUrl + 'purchase/delete/' + id, null, {headers: this.headers});
+  }
+
+  getSuppliers() {
+    return this.http.get(this.config.apiUrl + 'supplier/get-all', {headers: this.headers});
+  }
+
+  createSupplier(name, purchase_method_id) {
+    return this.http.post(this.config.apiUrl + 'supplier/create', {
+      name: name,
+      purchase_method_id: purchase_method_id
+    }, {headers: this.headers});
+  }
+
+  updateSupplier(name, purchase_method_id, id) {
+    return this.http.post(this.config.apiUrl + 'supplier/update/' + id, {
+      name: name,
+      purchase_method_id: purchase_method_id
+    }, {headers: this.headers});
+  }
+
+  deleteSupplier(id) {
+    return this.http.post(this.config.apiUrl + 'supplier/delete/' + id, null, {headers: this.headers});
+  }
+
+
 }

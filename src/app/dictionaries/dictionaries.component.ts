@@ -14,6 +14,9 @@ export class DictionariesComponent implements OnInit {
     this.showSpinner = true;
     this.apiService.getProfiles().subscribe((res) => {
       this.container.profiles = res;
+    });
+    this.apiService.getMethods().subscribe((res) => {
+      this.container.methods = res;
       this.showSpinner = false;
     });
   }
